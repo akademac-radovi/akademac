@@ -8,11 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Inter,sans-serif;
+    }
 
     body{
       background: radial-gradient(circle at top,#0b1220,#050814);
       color:#e5e7eb;
+      line-height:1.6;
     }
 
     header{
@@ -26,8 +32,8 @@
     }
 
     p{
-      color:#9ca3af;
       margin-top:15px;
+      color:#9ca3af;
       max-width:650px;
       margin-inline:auto;
     }
@@ -84,17 +90,24 @@
       color:#6b7280;
     }
 
-    /* CUSTOM CHAT */
+    /* CHAT BUTTON */
     .chat-btn{
       position:fixed;
       bottom:20px;
       right:20px;
       background:#2563eb;
       color:white;
-      padding:16px 20px;
+      padding:16px 22px;
       border-radius:50px;
       font-weight:700;
       cursor:pointer;
+      z-index:99999;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+      transition:0.2s;
+    }
+
+    .chat-btn:hover{
+      transform:scale(1.05);
     }
   </style>
 </head>
@@ -104,16 +117,17 @@
 <header>
   <h1>AKADEMAC CENTAR</h1>
   <p>Izrada seminarskih, maturskih i akademskih radova po dogovoru.</p>
-  <button class="btn">Kontaktirajte nas</button>
+
+  <button class="btn" onclick="Tawk_API.maximize()">Kontaktirajte nas</button>
 </header>
 
 <section>
   <h2>Usluge</h2>
   <div class="grid">
-    <div class="card">Seminarski radovi</div>
-    <div class="card">Maturski radovi</div>
-    <div class="card">Prezentacije</div>
-    <div class="card">Lektura</div>
+    <div class="card">📚 Seminarski radovi</div>
+    <div class="card">🎓 Maturski radovi</div>
+    <div class="card">📊 Prezentacije</div>
+    <div class="card">📝 Istraživački radovi</div>
   </div>
 </section>
 
@@ -122,6 +136,7 @@
   <table>
     <tr><th>Usluga</th><th>Cena</th></tr>
     <tr><td>Seminarski</td><td>2000–3000 RSD</td></tr>
+    <tr><td>Maturski</td><td>Po dogovoru</td></tr>
   </table>
 </section>
 
@@ -129,9 +144,24 @@
   © 2026 Akademac Centar
 </footer>
 
-<div class="chat-btn">
+<!-- FLOATING BUTTON -->
+<div class="chat-btn" onclick="Tawk_API.maximize()">
   💬 Chat
 </div>
+
+<!-- TAWK SCRIPT (JEDINI ISPRAVAN) -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a2b1cf7a8c3ca1c2fbfd284/1jqs6i9nj';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 
 </body>
 </html>
