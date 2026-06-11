@@ -20,27 +20,23 @@
     body {
       background: radial-gradient(circle at top, #0b1220, #050814);
       color: #e5e7eb;
-      line-height: 1.6;
     }
 
     header {
-      padding: 100px 20px 80px;
+      padding: 100px 20px 60px;
       text-align: center;
     }
 
     header h1 {
       font-size: 52px;
       font-weight: 700;
-      color: #fff;
     }
 
     header p {
       margin-top: 15px;
       color: #9ca3af;
       max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 18px;
+      margin: auto;
     }
 
     .btn {
@@ -50,78 +46,94 @@
       background: linear-gradient(135deg, #3b82f6, #2563eb);
       color: white;
       border-radius: 12px;
-      text-decoration: none;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(59,130,246,0.25);
     }
 
     section {
-      padding: 70px 20px;
-      max-width: 1100px;
+      padding: 60px 20px;
+      max-width: 1000px;
       margin: auto;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-bottom: 25px;
-      color: #fff;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
     }
 
     .card {
       background: rgba(255,255,255,0.03);
+      padding: 20px;
+      border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.08);
-      padding: 22px;
-      border-radius: 16px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    table th, table td {
-      padding: 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      text-align: left;
-    }
-
-    table th {
-      color: #fff;
-    }
-
-    /* 🔥 NAŠE GLAVNO DUGME */
+    /* CHAT BUTTON */
     .chat-btn {
       position: fixed;
-      bottom: 22px;
-      right: 22px;
-      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      bottom: 20px;
+      right: 20px;
+      background: #2563eb;
       color: white;
-      padding: 18px 26px;
-      border-radius: 14px;
+      padding: 16px 22px;
+      border-radius: 50px;
       cursor: pointer;
       font-weight: 700;
-      font-size: 15px;
-      box-shadow: 0 10px 30px rgba(59,130,246,0.35);
       z-index: 9999;
     }
 
-    .chat-btn:hover {
-      transform: scale(1.05);
+    /* CHAT WINDOW */
+    .chat-box {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 320px;
+      height: 420px;
+      background: #0f172a;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 9999;
     }
 
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #6b7280;
+    .chat-header {
+      background: #1d4ed8;
+      padding: 12px;
+      font-weight: 700;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
       font-size: 14px;
     }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+      background: #111827;
+      color: white;
+    }
+
+    .chat-input button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      cursor: pointer;
+    }
+
+    .msg {
+      margin: 5px 0;
+    }
+
+    .me { color: #60a5fa; }
+    .bot { color: #a7f3d0; }
   </style>
 </head>
 
@@ -129,72 +141,64 @@
 
 <header>
   <h1>AKADEMAC CENTAR</h1>
-  <p>Pomoć pri izradi seminarskih, maturskih i drugih akademskih radova.</p>
-  <a class="btn" onclick="openChat()">Kontaktirajte nas odmah</a>
+  <p>Izrada seminarskih, maturskih i akademskih radova.</p>
+  <div class="btn" onclick="toggleChat()">Kontaktirajte nas odmah</div>
 </header>
 
 <section>
-  <h2>Usluge</h2>
-  <div class="grid">
-    <div class="card">📚 Seminarski radovi</div>
-    <div class="card">🎓 Maturski radovi</div>
-    <div class="card">📊 Prezentacije</div>
-    <div class="card">📝 Istraživački radovi</div>
-    <div class="card">✏️ Lektura i uređivanje</div>
-  </div>
-</section>
-
-<section>
-  <h2>Cenovnik</h2>
-  <table>
-    <tr><th>Usluga</th><th>Cena</th></tr>
-    <tr><td>Seminarski radovi</td><td>2.000 – 3.000 RSD</td></tr>
-    <tr><td>Maturski radovi</td><td>Po dogovoru</td></tr>
-    <tr><td>Prezentacije</td><td>Po dogovoru</td></tr>
-    <tr><td>Lektura i uređivanje</td><td>Po dogovoru</td></tr>
-  </table>
-</section>
-
-<section>
-  <h2>Kako funkcioniše</h2>
   <div class="card">
-    1. Pošaljete upit putem chata.<br>
-    2. Dogovaramo detalje i rok.<br>
-    3. Dobijate gotov materijal.
+    1. Pošaljete poruku<br>
+    2. Dogovorimo detalje<br>
+    3. Isporučujemo rad
   </div>
 </section>
 
-<footer>
+<footer style="text-align:center; padding:40px; color:#6b7280;">
   © 2026 Akademac Centar
 </footer>
 
-<!-- 🔥 TAWK (HIDDEN - bez duplog dugmeta) -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+<!-- CHAT UI -->
+<div class="chat-btn" onclick="toggleChat()">💬 Chat</div>
 
-Tawk_API.onLoad = function(){
-  Tawk_API.hideWidget(); // 🔥 uklanja Tawk dugme
-};
+<div class="chat-box" id="chatBox">
+  <div class="chat-header">Akademac podrška</div>
 
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a2b1cf7a8c3ca1c2fbfd284/1jqs6i9nj';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  <div class="chat-messages" id="messages">
+    <div class="msg bot">Zdravo! Kako možemo pomoći?</div>
+  </div>
 
-function openChat(){
-  if(window.Tawk_API && Tawk_API.maximize){
-    Tawk_API.maximize();
-  }
+  <div class="chat-input">
+    <input id="input" placeholder="Unesite poruku..." />
+    <button onclick="sendMsg()">Pošalji</button>
+  </div>
+</div>
+
+<script>
+function toggleChat(){
+  const box = document.getElementById("chatBox");
+  box.style.display = box.style.display === "flex" ? "none" : "flex";
+}
+
+function sendMsg(){
+  const input = document.getElementById("input");
+  const messages = document.getElementById("messages");
+
+  if(input.value.trim() === "") return;
+
+  const userMsg = document.createElement("div");
+  userMsg.className = "msg me";
+  userMsg.textContent = "Ti: " + input.value;
+  messages.appendChild(userMsg);
+
+  const botMsg = document.createElement("div");
+  botMsg.className = "msg bot";
+  botMsg.textContent = "Podrška: Javićemo vam se uskoro putem ovog chata.";
+  messages.appendChild(botMsg);
+
+  input.value = "";
+  messages.scrollTop = messages.scrollHeight;
 }
 </script>
-
-<div class="chat-btn" onclick="openChat()">
-  💬 Kontaktirajte nas odmah
-</div>
 
 </body>
 </html>
