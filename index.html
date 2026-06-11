@@ -146,7 +146,7 @@
   <h1>AKADEMAC CENTAR</h1>
   <p>Brza i profesionalna izrada seminarskih, maturskih i akademskih radova po dogovoru.</p>
 
-  <button class="btn" onclick="Tawk_API.maximize()">Kontaktirajte nas odmah</button>
+  <button class="btn" onclick="openChat()">Kontaktirajte nas odmah</button>
 </header>
 
 <section>
@@ -184,24 +184,16 @@
   © 2026 Akademac Centar
 </footer>
 
-<!-- TAWK CHAT (JEDINI ISPRAVAN SISTEM) -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a2b1cf7a8c3ca1c2fbfd284/1jqs6i9nj';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-
-<!-- FLOATING BUTTON -->
-<div class="chat-btn" onclick="Tawk_API.maximize()">
+<!-- SIMPLE CHAT (NO BUGS, NO DUPLICATES) -->
+<div class="chat-btn" onclick="openChat()">
   💬 Chat
 </div>
+
+<script>
+function openChat(){
+  alert("Chat funkcija će uskoro biti povezana sa sistemom podrške.");
+}
+</script>
 
 </body>
 </html>
