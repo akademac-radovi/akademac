@@ -1,53 +1,173 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Akademac Centar</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    body{
+    *{
       margin:0;
-      font-family:Arial;
-      background:#0b1220;
-      color:white;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Inter,sans-serif;
+    }
+
+    body{
+      background: radial-gradient(circle at top,#0b1220,#050814);
+      color:#e5e7eb;
+    }
+
+    header{
       text-align:center;
-      padding:100px 20px;
+      padding:110px 20px 60px;
+    }
+
+    h1{
+      font-size:56px;
+      font-weight:800;
+    }
+
+    p{
+      margin-top:15px;
+      color:#9ca3af;
+      max-width:650px;
+      margin-inline:auto;
     }
 
     .btn{
-      margin-top:30px;
-      padding:14px 24px;
-      background:#2563eb;
+      margin-top:25px;
+      padding:14px 26px;
       border:none;
+      border-radius:12px;
+      background:#2563eb;
       color:white;
-      font-weight:bold;
-      border-radius:10px;
+      font-weight:700;
       cursor:pointer;
+      transition:0.2s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    section{
+      max-width:1000px;
+      margin:auto;
+      padding:70px 20px;
+    }
+
+    h2{
+      margin-bottom:20px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:15px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      padding:20px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    table{
+      width:100%;
+      margin-top:20px;
+      border-collapse:collapse;
+    }
+
+    td,th{
+      padding:12px;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      text-align:left;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#6b7280;
+    }
+
+    /* samo JEDNO dugme */
+    .chat-btn{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#2563eb;
+      color:white;
+      padding:16px 22px;
+      border-radius:50px;
+      font-weight:700;
+      cursor:pointer;
+      z-index:99999;
     }
   </style>
 </head>
 
 <body>
 
+<header>
   <h1>AKADEMAC CENTAR</h1>
-  <p>Seminarski i maturski radovi</p>
+  <p>Izrada seminarskih, maturskih i akademskih radova po dogovoru.</p>
 
-  <button class="btn" onclick="Tawk_API.maximize()">Kontaktirajte nas</button>
+  <button class="btn" onclick="openChat()">Kontaktirajte nas</button>
+</header>
 
-  <!-- TAWK ONLY -->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+<section>
+  <h2>Usluge</h2>
+  <div class="grid">
+    <div class="card">📚 Seminarski radovi</div>
+    <div class="card">🎓 Maturski radovi</div>
+    <div class="card">📊 Prezentacije</div>
+    <div class="card">📝 Istraživački radovi</div>
+  </div>
+</section>
 
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/6a2b1cf7a8c3ca1c2fbfd284/1jqs6i9nj';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
+<section>
+  <h2>Cenovnik</h2>
+  <table>
+    <tr><th>Usluga</th><th>Cena</th></tr>
+    <tr><td>Seminarski</td><td>2000–3000 RSD</td></tr>
+    <tr><td>Maturski</td><td>Po dogovoru</td></tr>
+  </table>
+</section>
+
+<footer>
+  © 2026 Akademac Centar
+</footer>
+
+<!-- JEDNO DUGME -->
+<div class="chat-btn" onclick="openChat()">
+  💬 Chat
+</div>
+
+<!-- TAWK -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a2b1cf7a8c3ca1c2fbfd284/1jqs6i9nj';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<script>
+function openChat(){
+  if(window.Tawk_API && Tawk_API.maximize){
+    Tawk_API.maximize();
+  }
+}
+</script>
 
 </body>
 </html>
