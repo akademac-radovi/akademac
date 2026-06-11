@@ -22,11 +22,11 @@
 
     header{
       text-align:center;
-      padding:110px 20px 60px;
+      padding:120px 20px 60px;
     }
 
     h1{
-      font-size:58px;
+      font-size:60px;
       font-weight:800;
     }
 
@@ -39,19 +39,24 @@
 
     .btn{
       margin-top:25px;
-      padding:14px 26px;
+      padding:14px 28px;
       border:none;
       border-radius:12px;
       background:#2563eb;
       color:white;
       font-weight:700;
       cursor:pointer;
+      transition:0.2s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
     }
 
     section{
       max-width:1100px;
       margin:auto;
-      padding:60px 20px;
+      padding:70px 20px;
     }
 
     h2{
@@ -72,11 +77,6 @@
       border:1px solid rgba(255,255,255,0.1);
     }
 
-    .card h3{
-      margin-bottom:8px;
-      font-size:18px;
-    }
-
     .price{
       margin-top:10px;
       color:#60a5fa;
@@ -86,7 +86,6 @@
     table{
       width:100%;
       border-collapse:collapse;
-      margin-top:10px;
     }
 
     td,th{
@@ -100,19 +99,6 @@
       padding:40px;
       color:#6b7280;
     }
-
-    .chat-btn{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:#2563eb;
-      color:white;
-      padding:16px 22px;
-      border-radius:50px;
-      font-weight:700;
-      cursor:pointer;
-      z-index:99999;
-    }
   </style>
 </head>
 
@@ -120,8 +106,9 @@
 
 <header>
   <h1>AKADEMAC CENTAR</h1>
-  <p>Profesionalna izrada seminarskih, maturskih i akademskih radova po dogovoru i u kratkim rokovima.</p>
+  <p>Profesionalna izrada seminarskih, maturskih i akademskih radova po dogovoru.</p>
 
+  <!-- JEDINO DUGME -->
   <button class="btn" onclick="openChat()">Kontaktirajte nas</button>
 </header>
 
@@ -132,13 +119,13 @@
 
     <div class="card">
       <h3>📚 Seminarski radovi</h3>
-      <p>Izrada kvalitetnih seminarskih radova po vašim smernicama.</p>
+      <p>Izrada kvalitetnih seminarskih radova.</p>
       <div class="price">2.000 – 3.000 RSD</div>
     </div>
 
     <div class="card">
       <h3>🎓 Maturski radovi</h3>
-      <p>Kompletna izrada maturskih radova uz dogovor o temi.</p>
+      <p>Kompletna izrada maturskih radova.</p>
       <div class="price">Po dogovoru</div>
     </div>
 
@@ -149,8 +136,8 @@
     </div>
 
     <div class="card">
-      <h3>📝 Lektura i uređivanje</h3>
-      <p>Ispravka i poboljšanje postojećih radova.</p>
+      <h3>📝 Lektura</h3>
+      <p>Ispravka i uređivanje radova.</p>
       <div class="price">Po dogovoru</div>
     </div>
 
@@ -158,11 +145,11 @@
 </section>
 
 <section>
-  <h2>Cenovnik (pregled)</h2>
+  <h2>Cenovnik</h2>
 
   <table>
     <tr><th>Usluga</th><th>Cena</th></tr>
-    <tr><td>Seminarski radovi</td><td>2.000 – 3.000 RSD</td></tr>
+    <tr><td>Seminarski radovi</td><td>2000 – 3000 RSD</td></tr>
     <tr><td>Maturski radovi</td><td>Po dogovoru</td></tr>
     <tr><td>Prezentacije</td><td>Po dogovoru</td></tr>
     <tr><td>Lektura</td><td>Po dogovoru</td></tr>
@@ -173,11 +160,7 @@
   © 2026 Akademac Centar
 </footer>
 
-<div class="chat-btn" onclick="openChat()">
-  💬 Chat
-</div>
-
-<!-- TAWK -->
+<!-- TAWK ONLY -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 
