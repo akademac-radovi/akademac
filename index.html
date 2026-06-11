@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -20,68 +20,133 @@
     body {
       background: radial-gradient(circle at top, #0b1220, #050814);
       color: #e5e7eb;
+      line-height: 1.6;
     }
 
+    /* HERO */
     header {
-      padding: 100px 20px 60px;
+      padding: 120px 20px 70px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 52px;
-      font-weight: 700;
+      font-size: 60px;
+      font-weight: 800;
+      letter-spacing: -1px;
     }
 
     header p {
-      margin-top: 15px;
+      margin-top: 18px;
+      font-size: 18px;
       color: #9ca3af;
       max-width: 650px;
-      margin: auto;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 25px;
-      padding: 14px 26px;
+      margin-top: 30px;
+      padding: 14px 28px;
       background: linear-gradient(135deg, #3b82f6, #2563eb);
       color: white;
-      border-radius: 12px;
-      font-weight: 600;
+      border-radius: 14px;
+      font-weight: 700;
       cursor: pointer;
+      box-shadow: 0 10px 30px rgba(59,130,246,0.25);
+      transition: 0.2s ease;
     }
 
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* BADGES */
+    .badges {
+      text-align: center;
+      margin-top: 20px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
     section {
-      padding: 60px 20px;
-      max-width: 1000px;
+      padding: 80px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
+    h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: #fff;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
     .card {
-      background: rgba(255,255,255,0.03);
-      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 22px;
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59,130,246,0.4);
+    }
+
+    /* TABLE */
+    table {
+      width: 100%;
+      border-collapse: collapse;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+    }
+
+    table th, table td {
+      padding: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-align: left;
+    }
+
+    table th {
+      color: #fff;
     }
 
     /* CHAT BUTTON */
     .chat-btn {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #2563eb;
+      bottom: 22px;
+      right: 22px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
       color: white;
       padding: 16px 22px;
       border-radius: 50px;
-      cursor: pointer;
       font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(59,130,246,0.35);
       z-index: 9999;
+      transition: 0.2s ease;
+    }
+
+    .chat-btn:hover {
+      transform: scale(1.05);
     }
 
     /* CHAT WINDOW */
     .chat-box {
       position: fixed;
       bottom: 90px;
-      right: 20px;
+      right: 22px;
       width: 320px;
       height: 420px;
       background: #0f172a;
@@ -128,12 +193,16 @@
       cursor: pointer;
     }
 
-    .msg {
-      margin: 5px 0;
-    }
-
+    .msg { margin: 6px 0; }
     .me { color: #60a5fa; }
     .bot { color: #a7f3d0; }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #6b7280;
+      font-size: 14px;
+    }
   </style>
 </head>
 
@@ -141,19 +210,47 @@
 
 <header>
   <h1>AKADEMAC CENTAR</h1>
-  <p>Izrada seminarskih, maturskih i akademskih radova.</p>
+  <p>Brza i profesionalna izrada seminarskih, maturskih i akademskih radova po dogovoru.</p>
+
   <div class="btn" onclick="toggleChat()">Kontaktirajte nas odmah</div>
+
+  <div class="badges">
+    ✔ Brza izrada &nbsp;&nbsp; ✔ Diskretno &nbsp;&nbsp; ✔ Dogovor oko cene
+  </div>
 </header>
 
 <section>
-  <div class="card">
-    1. Pošaljete poruku<br>
-    2. Dogovorimo detalje<br>
-    3. Isporučujemo rad
+  <h2>Usluge</h2>
+  <div class="grid">
+    <div class="card">📚 Seminarski radovi</div>
+    <div class="card">🎓 Maturski radovi</div>
+    <div class="card">📊 Prezentacije</div>
+    <div class="card">📝 Istraživački radovi</div>
+    <div class="card">✏️ Lektura i uređivanje</div>
   </div>
 </section>
 
-<footer style="text-align:center; padding:40px; color:#6b7280;">
+<section>
+  <h2>Cenovnik</h2>
+  <table>
+    <tr><th>Usluga</th><th>Cena</th></tr>
+    <tr><td>Seminarski radovi</td><td>2.000 – 3.000 RSD</td></tr>
+    <tr><td>Maturski radovi</td><td>Po dogovoru</td></tr>
+    <tr><td>Prezentacije</td><td>Po dogovoru</td></tr>
+    <tr><td>Lektura i uređivanje</td><td>Po dogovoru</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Kako funkcioniše</h2>
+  <div class="card">
+    1. Pošaljete poruku putem chata.<br>
+    2. Dogovaramo detalje i cenu.<br>
+    3. Dobijate gotov rad u dogovorenom roku.
+  </div>
+</section>
+
+<footer>
   © 2026 Akademac Centar
 </footer>
 
@@ -192,7 +289,7 @@ function sendMsg(){
 
   const botMsg = document.createElement("div");
   botMsg.className = "msg bot";
-  botMsg.textContent = "Podrška: Javićemo vam se uskoro putem ovog chata.";
+  botMsg.textContent = "Podrška: Javićemo vam se uskoro.";
   messages.appendChild(botMsg);
 
   input.value = "";
