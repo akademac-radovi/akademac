@@ -1,12 +1,194 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akademac</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akademac Centar</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b1220;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #0b1220, #111c33);
+    }
+
+    header h1 {
+      font-size: 42px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #9ca3af;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #3b82f6;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #fff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: #111c33;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #1f2a44;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    table td, table th {
+      border: 1px solid #1f2a44;
+      padding: 10px;
+    }
+
+    .chat-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #3b82f6;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(59,130,246,0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>AKADEMAC</h1>
-    <p>Sajt je u izradi.</p>
+
+<header>
+  <h1>AKADEMAC CENTAR</h1>
+  <p>Pomoć pri izradi seminarskih, maturskih i drugih akademskih radova.</p>
+  <a class="btn" onclick="openChat()">Kontaktirajte nas odmah</a>
+</header>
+
+<section>
+  <h2>Usluge</h2>
+  <div class="grid">
+    <div class="card">📚 Seminarski radovi</div>
+    <div class="card">🎓 Maturski radovi</div>
+    <div class="card">📊 Prezentacije</div>
+    <div class="card">📝 Istraživački radovi</div>
+    <div class="card">✏️ Lektura i uređivanje</div>
+  </div>
+</section>
+
+<section>
+  <h2>Cenovnik</h2>
+  <table>
+    <tr>
+      <th>Usluga</th>
+      <th>Cena</th>
+    </tr>
+    <tr>
+      <td>Seminarski radovi</td>
+      <td>2.000 – 3.000 RSD</td>
+    </tr>
+    <tr>
+      <td>Maturski radovi</td>
+      <td>Po dogovoru</td>
+    </tr>
+    <tr>
+      <td>Prezentacije</td>
+      <td>Po dogovoru</td>
+    </tr>
+    <tr>
+      <td>Lektura i uređivanje</td>
+      <td>Po dogovoru</td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2>Kako funkcioniše</h2>
+  <div class="card">
+    1. Pošaljete upit putem chata.<br>
+    2. Dogovaramo detalje i rok.<br>
+    3. Dobijate gotov materijal u dogovorenom roku.
+  </div>
+</section>
+
+<footer>
+  © 2026 Akademac Centar
+</footer>
+
+<div class="chat-btn" onclick="openChat()">
+  💬 Chat
+</div>
+
+<!-- Tawk.to CHAT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/REPLACE_WITH_YOUR_ID/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+
+function openChat(){
+  if(typeof Tawk_API !== "undefined"){
+    Tawk_API.maximize();
+  } else {
+    alert("Chat se učitava, pokušajte za nekoliko sekundi.");
+  }
+}
+</script>
+
 </body>
 </html>
