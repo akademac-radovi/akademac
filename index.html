@@ -23,7 +23,6 @@
       line-height: 1.6;
     }
 
-    /* HERO */
     header {
       padding: 120px 20px 70px;
       text-align: center;
@@ -55,21 +54,13 @@
       cursor: pointer;
       box-shadow: 0 10px 30px rgba(59,130,246,0.25);
       transition: 0.2s ease;
+      border: none;
     }
 
     .btn:hover {
       transform: translateY(-2px);
     }
 
-    /* BADGES */
-    .badges {
-      text-align: center;
-      margin-top: 20px;
-      color: #6b7280;
-      font-size: 14px;
-    }
-
-    /* SECTIONS */
     section {
       padding: 80px 20px;
       max-width: 1100px;
@@ -82,7 +73,6 @@
       color: #fff;
     }
 
-    /* CARDS */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -103,7 +93,6 @@
       border-color: rgba(59,130,246,0.4);
     }
 
-    /* TABLE */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -122,6 +111,13 @@
       color: #fff;
     }
 
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
     /* CHAT BUTTON */
     .chat-btn {
       position: fixed;
@@ -134,74 +130,12 @@
       font-weight: 700;
       cursor: pointer;
       box-shadow: 0 10px 30px rgba(59,130,246,0.35);
-      z-index: 9999;
+      z-index: 99999;
       transition: 0.2s ease;
     }
 
     .chat-btn:hover {
       transform: scale(1.05);
-    }
-
-    /* CHAT WINDOW */
-    .chat-box {
-      position: fixed;
-      bottom: 90px;
-      right: 22px;
-      width: 320px;
-      height: 420px;
-      background: #0f172a;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 9999;
-    }
-
-    .chat-header {
-      background: #1d4ed8;
-      padding: 12px;
-      font-weight: 700;
-    }
-
-    .chat-messages {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-      font-size: 14px;
-    }
-
-    .chat-input {
-      display: flex;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .chat-input input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      outline: none;
-      background: #111827;
-      color: white;
-    }
-
-    .chat-input button {
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 10px 14px;
-      cursor: pointer;
-    }
-
-    .msg { margin: 6px 0; }
-    .me { color: #60a5fa; }
-    .bot { color: #a7f3d0; }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #6b7280;
-      font-size: 14px;
     }
   </style>
 </head>
@@ -212,11 +146,7 @@
   <h1>AKADEMAC CENTAR</h1>
   <p>Brza i profesionalna izrada seminarskih, maturskih i akademskih radova po dogovoru.</p>
 
-  <div class="btn" onclick="toggleChat()">Kontaktirajte nas odmah</div>
-
-  <div class="badges">
-    ✔ Brza izrada &nbsp;&nbsp; ✔ Diskretno &nbsp;&nbsp; ✔ Dogovor oko cene
-  </div>
+  <button class="btn" onclick="Tawk_API.maximize()">Kontaktirajte nas odmah</button>
 </header>
 
 <section>
@@ -254,48 +184,24 @@
   © 2026 Akademac Centar
 </footer>
 
-<!-- CHAT UI -->
-<div class="chat-btn" onclick="toggleChat()">💬 Chat</div>
+<!-- TAWK CHAT (JEDINI ISPRAVAN SISTEM) -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 
-<div class="chat-box" id="chatBox">
-  <div class="chat-header">Akademac podrška</div>
-
-  <div class="chat-messages" id="messages">
-    <div class="msg bot">Zdravo! Kako možemo pomoći?</div>
-  </div>
-
-  <div class="chat-input">
-    <input id="input" placeholder="Unesite poruku..." />
-    <button onclick="sendMsg()">Pošalji</button>
-  </div>
-</div>
-
-<script>
-function toggleChat(){
-  const box = document.getElementById("chatBox");
-  box.style.display = box.style.display === "flex" ? "none" : "flex";
-}
-
-function sendMsg(){
-  const input = document.getElementById("input");
-  const messages = document.getElementById("messages");
-
-  if(input.value.trim() === "") return;
-
-  const userMsg = document.createElement("div");
-  userMsg.className = "msg me";
-  userMsg.textContent = "Ti: " + input.value;
-  messages.appendChild(userMsg);
-
-  const botMsg = document.createElement("div");
-  botMsg.className = "msg bot";
-  botMsg.textContent = "Podrška: Javićemo vam se uskoro.";
-  messages.appendChild(botMsg);
-
-  input.value = "";
-  messages.scrollTop = messages.scrollHeight;
-}
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a2b1cf7a8c3ca1c2fbfd284/1jqs6i9nj';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
 </script>
+
+<!-- FLOATING BUTTON -->
+<div class="chat-btn" onclick="Tawk_API.maximize()">
+  💬 Chat
+</div>
 
 </body>
 </html>
