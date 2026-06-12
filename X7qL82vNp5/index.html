@@ -3,309 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow">
   <title>Akademac Centar</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Inter, sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Inter,sans-serif;
     }
 
-    body {
-      background: #f6f8fa;
-      color: #111827;
-      line-height: 1.6;
+    body{
+      background: radial-gradient(circle at top,#0b1220,#050814);
+      color:#e5e7eb;
     }
 
-    /* NAV */
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 8%;
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    header{
+      text-align:center;
+      padding:120px 20px 60px;
     }
 
-    .logo {
-      font-weight: 800;
-      letter-spacing: 0.5px;
+    h1{
+      font-size:60px;
+      font-weight:800;
     }
 
-    .nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #374151;
-      font-size: 14px;
+    p{
+      margin-top:15px;
+      color:#9ca3af;
+      max-width:700px;
+      margin-inline:auto;
     }
 
-    .btn {
-      padding: 10px 16px;
-      background: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
+    .btn{
+      margin-top:25px;
+      padding:14px 28px;
+      border:none;
+      border-radius:12px;
+      background:#2563eb;
+      color:white;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.2s;
     }
 
-    /* HERO */
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 90px 8%;
-      gap: 40px;
+    .btn:hover{
+      transform:scale(1.05);
     }
 
-    .hero h1 {
-      font-size: 54px;
-      line-height: 1.1;
-      margin-bottom: 16px;
+    section{
+      max-width:1100px;
+      margin:auto;
+      padding:70px 20px;
     }
 
-    .hero p {
-      color: #6b7280;
-      max-width: 520px;
-      margin-bottom: 20px;
+    h2{
+      margin-bottom:20px;
+      font-size:26px;
     }
 
-    .hero img {
-      width: 440px;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
     }
 
-    /* SECTION */
-    section {
-      padding: 70px 8%;
+    .card{
+      background:rgba(255,255,255,0.05);
+      padding:22px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.1);
     }
 
-    h2 {
-      font-size: 30px;
-      margin-bottom: 25px;
+    .price{
+      margin-top:10px;
+      color:#60a5fa;
+      font-weight:700;
     }
 
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+    table{
+      width:100%;
+      border-collapse:collapse;
     }
 
-    .card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 22px;
-      transition: 0.2s;
+    td,th{
+      padding:12px;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      text-align:left;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#6b7280;
     }
-
-    .price {
-      margin-top: 10px;
-      font-weight: 700;
-      color: #2563eb;
-    }
-
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .feature {
-      background: white;
-      padding: 20px;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-    }
-
-    /* CTA */
-    .cta {
-      background: #2563eb;
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
-      border-radius: 18px;
-      margin: 0 8%;
-    }
-
-    .cta h2 {
-      color: white;
-    }
-
-    .cta p {
-      opacity: 0.9;
-    }
-
-    .cta button {
-      margin-top: 20px;
-      background: white;
-      color: #2563eb;
-      padding: 12px 18px;
-      border-radius: 10px;
-      border: none;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #6b7280;
-      margin-top: 40px;
-    }
-
-    /* MOBILE */
-    @media(max-width: 900px){
-      .hero{
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero img{
-        width: 100%;
-      }
-
-      .features{
-        grid-template-columns: 1fr;
-      }
-    }
-
   </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
-  <div class="logo">AKADEMAC CENTAR</div>
+<header>
+  <h1>AKADEMAC CENTAR</h1>
+  <p>Profesionalna izrada seminarskih, maturskih i akademskih radova po dogovoru.</p>
 
-  <div>
-    <a href="#usluge">Usluge</a>
-    <a href="#o-nama">O nama</a>
-    <a href="#cene">Cene</a>
-    <button class="btn" onclick="openChat()">Kontakt</button>
-  </div>
-</div>
+  <!-- JEDINO DUGME -->
+  <button class="btn" onclick="openChat()">Kontaktirajte nas</button>
+</header>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <h1>Profesionalni akademski radovi urađeni brzo i kvalitetno</h1>
-    <p>
-      Pomoć pri izradi seminarskih, maturskih radova, prezentacija i lekture.
-      Fokus na kvalitet, strukturu i akademski standard.
-    </p>
-    <button class="btn">Pogledaj usluge</button>
-  </div>
-
-  <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" />
-</div>
-
-<!-- FEATURES -->
-<section id="o-nama">
-  <h2>Zašto mi?</h2>
-
-  <div class="features">
-    <div class="feature">
-      <h3>Brza izrada</h3>
-      <p>Radovi u kratkim rokovima bez gubitka kvaliteta.</p>
-    </div>
-
-    <div class="feature">
-      <h3>Kvalitet</h3>
-      <p>Strukturirani i akademski ispravni radovi.</p>
-    </div>
-
-    <div class="feature">
-      <h3>Diskrecija</h3>
-      <p>Kompletna privatnost i sigurnost komunikacije.</p>
-    </div>
-  </div>
-</section>
-
-<!-- USLUGE -->
-<section id="usluge">
+<section>
   <h2>Usluge</h2>
 
   <div class="grid">
 
     <div class="card">
-      <h3>Seminarski radovi</h3>
-      <p>Izrada kvalitetnih radova po standardu.</p>
+      <h3>📚 Seminarski radovi</h3>
+      <p>Izrada kvalitetnih seminarskih radova.</p>
       <div class="price">2.000 – 3.000 RSD</div>
     </div>
 
     <div class="card">
-      <h3>Maturski radovi</h3>
-      <p>Kompletna izrada sa literaturom i strukturom.</p>
+      <h3>🎓 Maturski radovi</h3>
+      <p>Kompletna izrada maturskih radova.</p>
       <div class="price">Po dogovoru</div>
     </div>
 
     <div class="card">
-      <h3>Prezentacije</h3>
-      <p>PowerPoint dizajn spreman za odbranu.</p>
-      <div class="price">1.000 – 2.000 RSD</div>
+      <h3>📊 Prezentacije</h3>
+      <p>PowerPoint prezentacije za školu i fakultet.</p>
+      <div class="price">Po dogovoru</div>
     </div>
 
     <div class="card">
-      <h3>Lektura</h3>
-      <p>Ispravka i poboljšanje postojećeg rada.</p>
+      <h3>📝 Lektura</h3>
+      <p>Ispravka i uređivanje radova.</p>
       <div class="price">Po dogovoru</div>
     </div>
 
   </div>
 </section>
 
-<!-- CENE -->
-<section id="cene">
+<section>
   <h2>Cenovnik</h2>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Basic</h3>
-      <p>Jednostavni radovi</p>
-      <div class="price">2000 RSD+</div>
-    </div>
-
-    <div class="card">
-      <h3>Standard</h3>
-      <p>Detaljni rad + literatura</p>
-      <div class="price">3000 RSD+</div>
-    </div>
-
-    <div class="card">
-      <h3>Premium</h3>
-      <p>Komplet + prezentacija</p>
-      <div class="price">Po dogovoru</div>
-    </div>
-  </div>
+  <table>
+    <tr><th>Usluga</th><th>Cena</th></tr>
+    <tr><td>Seminarski radovi</td><td>2000 – 3000 RSD</td></tr>
+    <tr><td>Maturski radovi</td><td>Po dogovoru</td></tr>
+    <tr><td>Prezentacije</td><td>Po dogovoru</td></tr>
+    <tr><td>Lektura</td><td>Po dogovoru</td></tr>
+  </table>
 </section>
-
-<!-- CTA -->
-<div class="cta">
-  <h2>Spreman da započneš?</h2>
-  <p>Kontaktiraj nas i dobij ponudu u najkraćem roku.</p>
-  <button onclick="openChat()">Kontaktiraj nas</button>
-</div>
 
 <footer>
   © 2026 Akademac Centar
 </footer>
+
+<!-- TAWK ONLY -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a2b1cf7a8c3ca1c2fbfd284/1jqs6i9nj';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 
 <script>
 function openChat(){
