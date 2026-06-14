@@ -3,7 +3,7 @@
 	font-style: normal;
 	font-weight: normal;
 	font-display: auto;
-	src: url('http://www.ekonomija4you.com/wp-content/uploads/2024/03/Segoe-UI.ttf') format('truetype');
+	src: url('../fonts/Segoe-UI.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'Segoe UI';
