@@ -471,6 +471,15 @@ a {
 				<div class="elementor-widget-container">
 			<h3 class="elementor-heading-title elementor-size-xl">Radovi već od 2000rsd. Kontaktirajte nas odmah u donjem desnom uglu ekrana i javićemo se odmah!</h3>		</div>
 				</div>
+						<button onclick="openChat()" style="
+    padding:12px 24px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+">
+    Kontaktirajte nas
+</button>
 					</div>
 				</div>
 		<div class="elementor-element elementor-element-f5ffd0f e-flex e-con-boxed e-con e-parent" data-id="f5ffd0f" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;waves&quot;,&quot;content_width&quot;:&quot;boxed&quot;}" data-core-v316-plus="true">
@@ -899,6 +908,14 @@ a {
     Copyright © 2014-2026
 </footer>		
 
+<script>
+function openChat(){
+  if(window.Tawk_API && Tawk_API.maximize){
+    Tawk_API.maximize();
+  }
+}
+</script>
+	
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 
